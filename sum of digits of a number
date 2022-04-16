@@ -1,0 +1,15 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     int num = 5678;
+     int rem=0;
+     int sum=0;
+    while(num>0)
+     {
+         rem = rem%10;
+         sum=sum+10;
+         num=num/10;
+     }
+     System.out.print(sum);
+}
+}

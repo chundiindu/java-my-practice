@@ -1,0 +1,62 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+// creation of a node
+public class Node{
+    int data;
+    Node next;
+    
+    Node()
+    {
+        this.data=data;
+        this.next = next;
+    }
+}
+public class Intialize
+{
+    private Node head ;
+   public  Intialize()
+    {
+        this.head = null;
+    }
+public Node insertAtEnd(int data)
+{
+    if(head==null)
+    {
+        head = new Node(data);
+    }
+    else
+    {
+        Node node = head;
+        while(node.next!=null)
+        {
+           node = node.next; 
+        }
+        node.next=new Node(data);
+    }
+    return head;
+}
+
+public void print()
+{
+    Node temp = head;
+    while(temp!=null)
+    {
+        System.out.print(temp.data);
+        temp=temp.next;
+    }
+}
+}
+public class Main{
+public static void main (String[] args)
+{
+    Intialize l = new Intialize();
+    l.insertAtEnd(2);
+     l.insertAtEnd(3);
+      l.insertAtEnd(4);
+       l.insertAtEnd(5);
+       l.print();
+    
+}
+}
+

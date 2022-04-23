@@ -1,0 +1,33 @@
+// to check  string it is palindrome or not 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class MyClass {
+    public static void main(String args[]) {
+    boolean isPalindrome = true;
+      String str = "madam";
+      int start = 0;
+      int end = str.length()-1;
+      while(start<end)
+      {
+          if(str.charAt(start)!=str.charAt(end))
+          {
+              isPalindrome = false;
+              break;
+          }
+          else
+          {
+              start++;
+              end--;
+          }
+      }
+      if(isPalindrome)
+      {
+          System.out.print("It is A palindrome");
+      }
+      else
+      {
+          System.out.print("It is not an Palindrome");
+      }
+    }
+}

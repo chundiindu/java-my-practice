@@ -1,0 +1,67 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Linkedlist{
+Node head;
+    class Node{
+       
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+            this.next=null;
+        }
+    }
+
+    public void insert(int new_data)
+    {
+        if(head==null)
+        {
+            head = new Node(new_data);
+        }
+        else
+        {
+            Node temp = new Node(new_data);
+            temp.next=head;
+            head=temp;
+        }
+    }
+    public void printMiddle()
+    {
+         Node slow = head;
+         Node fast = head;
+ 
+         while (fast != null && fast.next != null) {
+ 
+               slow = slow.next;
+               fast = fast.next.next;
+         }
+ 
+         System.out.println(" Middle Element of a Linked List is " + slow.data);
+     }
+     public void print()
+    {
+        Node temp = head;
+        while (temp != null)
+        {
+            System.out.print(temp.data+"->");
+            temp = temp.next;
+        }
+        System.out.println("NULL");
+    }
+     public static void main(String[] args) {
+ 
+      Linkedlist ll = new Linkedlist();
+ 
+         ll.insert(6);
+         ll.insert(5);
+         ll.insert(8);
+         ll.insert(9);
+         ll.insert(15);
+ 
+         ll.print();
+ 
+         ll.printMiddle();
+    }
+}

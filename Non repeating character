@@ -1,0 +1,40 @@
+// first non repeating character in a string 
+//webwrite: b is the first non repeating character
+// print b
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.Map.Entry;
+
+  public class Main{
+    public static void NonRepeating(String s)
+    {
+        HashMap<Character,Integer> map = new LinkedHashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+           if(map.containsKey(s.charAt(i)))
+           {
+               map.put(s.charAt(i),map.get(s.charAt(i))+1);
+           }
+           else
+           {
+               map.put(s.charAt(i),1);
+           }
+        }
+        for ( Entry <Character, Integer> entry : map.entrySet()) 
+        {
+            if(entry.getValue()==1)
+            {
+                System.out.print("First Non repeated character is :"+ entry.getKey());
+                break;
+            }
+        }
+    }
+  
+    public static void main(String[] args)
+    {
+        String s = "Java";
+         NonRepeating(s);
+        
+    }
+}

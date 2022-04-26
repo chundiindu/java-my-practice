@@ -1,0 +1,39 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class MyClass {
+    public static void main(String[] args)
+    {
+    int n = 4567890;
+    int r;
+    int count =0;
+    while(n>0)
+    {
+       r=n%10;
+       count++;
+       n=n/10;
+    }
+    System.out.print("the number of digits in a number is "+" "+count);
+    }
+}
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class MyClass {
+public static int CountDigit(int num)
+{
+    if(num==0)
+    {
+        return 0;
+    }
+        return 1+CountDigit(num/10);
+}
+    public static void main(String[] args)
+    {
+    int num = 4567890;
+    int result = CountDigit(num);
+     System.out.print("the number of digits in a number is "+" "+result);
+    
+    }
+}

@@ -1,0 +1,45 @@
+public class Power {
+	public static int  calculatePower(int n , int p)
+	{
+		int pow = 1;
+		for(int i=0;i<p;i++)
+		{
+			pow = pow * n;
+		}
+		return pow;
+	}
+	public static void main(String[] args)
+	{
+		int n = 3;
+		int p = 5;
+		int result = calculatePower(3,5);
+		System.out.print(" the power of a  number is : " + result);
+	}
+
+}
+
+public class Power_Recursion {
+   public static int calculate(int n , int p)
+   {
+	   if(p==0)
+	   {
+		   return 1;
+	   }
+	   else  if(p > 0)
+	   {
+		   return n * calculate(n, p-1);
+	   }
+	   else
+	   {
+		   return 1/(calculate(n,p-1));
+	   }
+   }
+   public static void main(String[] args)
+   {
+	   int n = 3;
+	   int p = 5;
+	   int result = calculate(3,5);
+	   System.out.println(result);
+	   
+   }
+}
